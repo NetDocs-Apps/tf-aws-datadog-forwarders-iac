@@ -120,7 +120,7 @@ resource "null_resource" "this" {
   count = var.create ? 1 : 0
 
   triggers = {
-    on_version_change = var.forwarder_version
+    always_run = timestamp()
   }
 
   provisioner "local-exec" {
